@@ -7,7 +7,7 @@ public class Main {
 
         String[][] arrayFilmes = {
                 {"The Walking Dead", "Zumbilândia"},
-                {"Todo Mundo em Pânico", "O Hereditário"} // Dividindo em dois arrays, pra pegar o valor de cada um. O primeiro array é a categoria e o segundo é o gênero.
+                {"Todo Mundo em Pânico", "O Hereditário"} // Colocando os dois arrays com os filmes dentro de outro array, pra conseguir calcular corretamente o valor de cada pergunta.
         };
         Scanner leitor = new Scanner(System.in);
         System.out.println("Pergunta 1: Qual sua categoria de filme favorita?");
