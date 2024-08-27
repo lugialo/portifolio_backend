@@ -28,9 +28,12 @@ public class Main {
         jogador.ataque = 5;
 
         Random gerador = new Random();
-        Integer indiceAleatorio = gerador.nextInt(3);
 
-        jogador.atacar(listaInimigos[indiceAleatorio]);
-        System.out.println(listaInimigos[indiceAleatorio].vida);
+        jogador.atacar(listaInimigos[gerador.nextInt(listaInimigos.length)]);
+
+        System.out.println(listaInimigos[0].vida);
+        System.out.println(listaInimigos[1].vida);
+        System.out.println(listaInimigos[2].vida);
+
     }
 }
