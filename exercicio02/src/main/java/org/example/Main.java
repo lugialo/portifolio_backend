@@ -29,7 +29,10 @@ public class Main {
 
         Random gerador = new Random();
 
-        jogador.atacar(listaInimigos[gerador.nextInt(listaInimigos.length)]);
+        while (listaInimigos[0].vida > 0 || listaInimigos[1].vida > 0 || listaInimigos[2].vida > 0) {
+            jogador.atacar(listaInimigos[gerador.nextInt(listaInimigos.length)]);
+        }
+
 
         System.out.println(listaInimigos[0].vida);
         System.out.println(listaInimigos[1].vida);

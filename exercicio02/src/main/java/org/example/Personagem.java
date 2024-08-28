@@ -7,7 +7,7 @@ public class Personagem {
 
     public void receberDano(int dano) {
         if (this.vida <= 0) {
-            System.out.println("O personagem " + this.nome + " foi derrotado.");
+            System.out.println("O personagem " + this.nome + " foi derrotado!");
         } else {
             this.vida -= dano;
         }
