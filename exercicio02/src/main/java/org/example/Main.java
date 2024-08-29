@@ -1,42 +1,36 @@
 package org.example;
 
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        Personagem[] listaInimigos = new Personagem[3];
 
-        listaInimigos[0] = new Personagem();
-        listaInimigos[1] = new Personagem();
-        listaInimigos[2] = new Personagem();
+        List<Personagem> inimigos = new ArrayList<>();
+        inimigos.add(new Personagem("Shrek", 10, 10));
+        inimigos.add(new Personagem("Burro", 5, 5));
+        inimigos.add(new Personagem("Dragão", 5, 10));
 
-        listaInimigos[0].nome = "Orc Shaman";
-        listaInimigos[1].nome = "Elf Scout";
-        listaInimigos[2].nome = "Forest Fury";
+        Personagem personagem = new Personagem("Denis Tacador de Runa", 100, 5);
 
-        listaInimigos[0].ataque = 3;
-        listaInimigos[1].ataque = 2;
-        listaInimigos[2].ataque = 1;
+        Random random = new Random();
 
-        listaInimigos[0].vida = 20;
-        listaInimigos[1].vida = 15;
-        listaInimigos[2].vida = 10;
 
-        Personagem jogador = new Personagem();
-        jogador.nome = "Denis Tacador de Runa";
-        jogador.vida = 10;
-        jogador.ataque = 5;
+        while (personagem.getVida() > 0 || (inimigos.get(0).getVida() > 0  && inimigos.get(1).getVida() > 0 && inimigos.get(2).getVida() > 0))
+        {
+            Personagem inimigoAleatorio = inimigos.get(random.nextInt(inimigos.size()));
 
-        Random gerador = new Random();
+            if (inimigoAleatorio.getVida() > 0) {
+                personagem.atacar(inimigoAleatorio);
+            }
 
-        while (listaInimigos[0].vida > 0 || listaInimigos[1].vida > 0 || listaInimigos[2].vida > 0) {
-            jogador.atacar(listaInimigos[gerador.nextInt(listaInimigos.length)]);
+            for (Personagem inimigo : inimigos) {
+                if (inimigo.getVida() > 0) {
+                    inimigo.atacar(personagem);
+                }
+            }
         }
-
-
-        System.out.println(listaInimigos[0].vida);
-        System.out.println(listaInimigos[1].vida);
-        System.out.println(listaInimigos[2].vida);
 
     }
 }

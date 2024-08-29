@@ -1,26 +1,61 @@
 package org.example;
 
 public class Personagem {
-    public String nome;
-    public Integer vida = 10;
-    public Integer ataque = 5;
+    private String nome;
+    private int vida;
+    private int ataque;
+
+    // Construtor
+    public Personagem(String nome, int vida, int ataque) {
+        this.nome = nome;
+        this.vida = vida;
+        this.ataque = ataque;
+    }
+
+    // Getter nome
+    public String getNome() {
+        return this.nome;
+    }
+
+    // Setter nome
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    // Getter vida
+    public int getVida() {
+        return this.vida;
+    }
+
+    // Setter vida
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
+    // Getter ataque
+    public int getAtaque() {
+        return this.ataque;
+    }
+
+    // Setter ataque
+    public void setAtaque(int ataque) {
+        this.ataque = ataque;
+    }
 
     public void receberDano(int dano) {
-        if (this.vida <= 0) {
-            System.out.println("O personagem " + this.nome + " foi derrotado!");
-        } else {
+        if (this.getVida() > 0) {
             this.vida -= dano;
+            if (this.getVida() <= 0) {
+                System.out.println(this.nome + " foi derrotado!");
+            }
         }
-
     }
 
     public void atacar(Personagem alvo) {
-        if (alvo.vida >= 0) {
-            alvo.receberDano(this.ataque); // Aplicando o method no alvo.
-//            System.out.println("O personagem " + this.nome + " atacou " + alvo.nome + "!");
-        } else {
-            System.out.println("O ataque falhou.");
+        if (alvo.getVida() >= 0) {
+            alvo.receberDano(this.getAtaque());
+        } else if (alvo.getVida() <= 0) {
+            System.out.println("O ataque falhou!");
         }
-
     }
 }
