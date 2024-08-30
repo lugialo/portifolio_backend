@@ -1,5 +1,7 @@
 package org.example;
 
+import java.sql.SQLOutput;
+
 public class Musica {
     private String titulo;
     private String artista;
@@ -10,7 +12,15 @@ public class Musica {
         this.artista = artista;
     }
 
+    // Getter
+    public String getTitulo() {
+        return this.titulo;
+    }
 
+    // Setter
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
 
     // Getter
     public String getArtista() {
