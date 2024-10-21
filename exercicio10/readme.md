@@ -19,3 +19,9 @@
 
 - musicas
 - playlists
+
+### Endpoints
+
+| Descrição | URI | Método HTTP | Corpo | Resposta Esperada | Erros esperados |
+| --- | --- | --- | --- | --- | --- |
+| Retornar uma música | `GET /musicas/{musica-id}` | `GET` | Vazio | `200 OK` | `404 Not Found` - A música não foi encontrada. | 
