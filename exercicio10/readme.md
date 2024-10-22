@@ -31,6 +31,6 @@
 | Retornar uma playlist | `GET /playlists/{playlist-id}` | `GET` | Vazio | `200 OK` | `404 Not Found` playlist não foi encontrada. |
 | Criar uma nova playlist | `POST /playlists/{playlist-id}` | `POST` | `{ "nome": "Playlist 1", "descricao": "Minha primeira playlist", "creatorId": "3", "data_criacao", "2018-09-25"}` | `201 Created` | `404 Not Found` - playlist não foi encontrada
 | Editar playlist | `PUT /playlists/{playlist-id}` | `PUT` | `{ "nome": "Playlist 1!!" }` | `200 OK` | `404 Not Found` - playlist não encontrada. |
-| Excluir paylist | `DELETE /playlists/{playlist-id} | `DELETE` | Vazio | `200 OK` | `404 Not Found` - playlist não foi encontrada. |
+| Excluir playlist | `DELETE /playlists/{playlist-id}` | `DELETE` | Vazio | `200 OK` | `404 Not Found` - playlist não foi encontrada. |
 | Adicionar música à playlist | `POST /playlists/{playlist-id}/musicas` | `POST` | `{ "musicaId": "125", "nome": "Paranoid Android", "artista": "Radiohead", "album": "OK Computer", "duracao": "377" }` | `201 Created` | `404 Not Found` - playlist não encontrada |
 | Excluir música da playlist | `DELETE /playlists/{playlist-id}/musicas/{musica-id}` | `DELETE` | Vazio | `200 OK` | `404 Not Found` - playlist ou música não encontrada |
