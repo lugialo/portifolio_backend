@@ -1,10 +1,12 @@
 package com.example.exercicio12.services;
 
 import com.example.exercicio12.models.ContaModelo;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class TransacaoService {
     private List<ContaModelo> contas;
 
